@@ -56,7 +56,6 @@ def get_neighbors(v):
         
         
         
- 
 def heuristic(n):
     H_dist = {
         'A': 10,
