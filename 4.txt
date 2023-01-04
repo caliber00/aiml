@@ -16,7 +16,7 @@ class Node:
         self.pred = ""
         
         
- def entropy(examples):
+def entropy(examples):
     pos = 0.0
     neg = 0.0
     for _, row in examples.iterrows():
