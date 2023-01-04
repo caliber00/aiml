@@ -32,6 +32,14 @@ def entropy(examples):
         return -(p * math.log(p, 2) + n * math.log(n, 2))
         
         
+def info_gain(examples, attr):
+    uniq = np.unique(examples[attr])
+    gain = entropy(examples)
+    for u in uniq:
+        subdata = examples[examples[attr] == u]
+        sub_e = entropy(subdata)
+        gain -= (float(len(subdata)) / float(len(examples))) * sub_e
+    return gain
 
 def ID3(examples, attrs):
     root = Node()
